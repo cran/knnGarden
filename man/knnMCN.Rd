@@ -34,7 +34,7 @@ First, calculate the Mahalanobis Distance between all the cases in training data
 
 When calculating the Mahalanobis Distance, we use samples' covariance matrix (CM) and the Mahalanobis Distance is defined as follows:
 
-MD=sqrt((X-Y)%*%inverse(CM)%*%transpose(X-Y))
+MD=sqrt((X-Y)*inverse(CM)*transpose(X-Y))
 , where X,Y are 1*n vectors and CM is n*n matrix.
 
 Sometimes a case may get same "ballot" from class A and class B (even C, D, ...), this time a weighted voting process will be activated. The weight is based on the actual distance calculated between the test case and  K cases in neighbor A and B. The test case belongs to the class with less total distance.
